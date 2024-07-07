@@ -1,0 +1,33 @@
+package com.housing.back.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "refresh_token")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class RefreshTokenEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String userId;
+    private String refreshToken;
+    private String deviceInfo;
+    private String ipAddress;
+    private Date expirationDate;
+}
+
